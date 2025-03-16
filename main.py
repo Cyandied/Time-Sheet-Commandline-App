@@ -141,6 +141,8 @@ def registerVacay(ID):
     sheet[f'A{4+date}'] = date
     sheet[f'E{4+date}'] = "Ferie"
     saveWorkbook(wb,ID)
+    print(f'Ferie registreret for {ID}.')
+    cont = input("Tryk \"Enter\" for at fortsætte")
     return
 
 def registerArrival(ID):
@@ -244,6 +246,8 @@ def registerSickness(ID):
     sheet[f'A{4+date}'] = date
     sheet[f'F{4+date}'] = "Syg"
     saveWorkbook(wb,ID)
+    print(f'Sygdom registreret for {ID}.')
+    cont = input("Tryk \"Enter\" for at fortsætte")
     return
 
 os.system("cls")
@@ -329,7 +333,6 @@ while(keepOpen):
                 registerLeave(id,None)
         else:
             registerLeave(args[1],reason)
-
     else:
         print("Hov... den kendte jeg ikke, skriv \"h\" eller \"hjælp\" for at se de kommandoer du kan bruge!")
         cont = input("Tryk \"Enter\" for at fortsætte")
